@@ -23,7 +23,7 @@ Para ejecutar: python -m interfaz.main
 
 ## Pruebas
 
-==========================
+
 PRUEBA 1: VÁLIDA
 --------------------------
 Código:
@@ -40,7 +40,7 @@ Salida esperada:
 - Semántico:
   ¡Análisis semántico exitoso! No se encontraron errores semánticos.
 
-==========================
+
 PRUEBA 3: NO VÁLIDA (SINTÁCTICO)
 --------------------------
 Código:
@@ -56,7 +56,7 @@ Salida esperada:
 - Semántico:
   No se pudo generar el AST. ¿El código está vacío o tiene errores?
 
-==========================
+
 PRUEBA 4: NO VÁLIDA (SEMÁNTICO)
 --------------------------
 Código:
