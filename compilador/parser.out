@@ -1,0 +1,3066 @@
+Created by PLY version 3.9 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    POTENCIA
+    DIVISION_ENTERA
+    CORCHETE_IZQ
+    CORCHETE_DER
+    LLAVE_IZQ
+    LLAVE_DER
+    PUNTO
+    PUNTO_COMA
+    ARROBA
+    ALMOHADILLA
+    DOLAR
+    PORCENTAJE
+    AMPERSAND
+    BARRA_VERTICAL
+    BACKSLASH
+    SLASH
+    ADMIRACION
+    INTERROGACION
+    COMILLASIMPLE
+    COMILLADOBLE
+    MENOR_MENOR
+    MAYOR_MAYOR
+    FLECHA
+    FLECHA_GORDA
+    TILDE
+    GUION_BAJO
+    PUNTO_PUNTO
+    PUNTO_PUNTO_PUNTO
+    DOBLE_AMPERSAND
+    DOBLE_BARRA
+    DOBLE_PUNTO
+    DOBLE_IGUAL
+    ADMIGUAL
+    MENOS_MAYOR
+    PORCENTAJE_IGUAL
+    MAS_IGUAL
+    MENOS_IGUAL
+    POR_IGUAL
+    DIVIDIDO_IGUAL
+    AND_IGUAL
+    OR_IGUAL
+    XOR_IGUAL
+    DESPLAZA_IZQ_IGUAL
+    DESPLAZA_DER_IGUAL
+    MODULO_IGUAL
+    PREGUNTA_DOS_PUNTOS
+    AND_BIN
+    OR_BIN
+    XOR_BIN
+    NOT_BIN
+    DESPLAZA_IZQ
+    DESPLAZA_DER
+    INCREMENTO
+    DECREMENTO
+    FALSE
+    NONE
+    TRUE
+    AS
+    ASSERT
+    ASYNC
+    AWAIT
+    BREAK
+    CASE
+    CLASS
+    CONTINUE
+    DEL
+    ELIF
+    EXCEPT
+    FINALLY
+    FROM
+    GLOBAL
+    IMPORT
+    IS
+    LAMBDA
+    MATCH
+    NONLOCAL
+    NOT
+    PASS
+    RAISE
+    RETURN
+    TRY
+    WITH
+    YIELD
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statements
+Rule 2     statements -> statements statement
+Rule 3     statements -> statement
+Rule 4     statement -> IDENTIFICADOR ASIGNAR expression
+Rule 5     statement -> expression
+Rule 6     statement -> IF expression DOS_PUNTOS statements
+Rule 7     statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+Rule 8     statement -> WHILE expression DOS_PUNTOS statements
+Rule 9     statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+Rule 10    statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+Rule 11    params -> params COMA IDENTIFICADOR
+Rule 12    params -> IDENTIFICADOR
+Rule 13    params -> <empty>
+Rule 14    expression -> expression MAS expression
+Rule 15    expression -> expression MENOS expression
+Rule 16    expression -> expression POR expression
+Rule 17    expression -> expression DIVIDIDO expression
+Rule 18    expression -> expression MODULO expression
+Rule 19    expression -> expression IGUAL expression
+Rule 20    expression -> expression DIFERENTE expression
+Rule 21    expression -> expression MENOR expression
+Rule 22    expression -> expression MENORIGUAL expression
+Rule 23    expression -> expression MAYOR expression
+Rule 24    expression -> expression MAYORIGUAL expression
+Rule 25    expression -> expression AND expression
+Rule 26    expression -> expression OR expression
+Rule 27    expression -> MENOS expression
+Rule 28    expression -> PARENTESIS_IZQ expression PARENTESIS_DER
+Rule 29    expression -> NUMERO
+Rule 30    expression -> CADENA
+Rule 31    expression -> IDENTIFICADOR
+Rule 32    expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+Rule 33    args -> args COMA expression
+Rule 34    args -> expression
+Rule 35    args -> <empty>
+
+Terminals, with rules where they appear
+
+ADMIGUAL             : 
+ADMIRACION           : 
+ALMOHADILLA          : 
+AMPERSAND            : 
+AND                  : 25
+AND_BIN              : 
+AND_IGUAL            : 
+ARROBA               : 
+AS                   : 
+ASIGNAR              : 4
+ASSERT               : 
+ASYNC                : 
+AWAIT                : 
+BACKSLASH            : 
+BARRA_VERTICAL       : 
+BREAK                : 
+CADENA               : 30
+CASE                 : 
+CLASS                : 
+COMA                 : 11 33
+COMILLADOBLE         : 
+COMILLASIMPLE        : 
+CONTINUE             : 
+CORCHETE_DER         : 
+CORCHETE_IZQ         : 
+DECREMENTO           : 
+DEF                  : 10
+DEL                  : 
+DESPLAZA_DER         : 
+DESPLAZA_DER_IGUAL   : 
+DESPLAZA_IZQ         : 
+DESPLAZA_IZQ_IGUAL   : 
+DIFERENTE            : 20
+DIVIDIDO             : 17
+DIVIDIDO_IGUAL       : 
+DIVISION_ENTERA      : 
+DOBLE_AMPERSAND      : 
+DOBLE_BARRA          : 
+DOBLE_IGUAL          : 
+DOBLE_PUNTO          : 
+DOLAR                : 
+DOS_PUNTOS           : 6 7 7 8 9 10
+ELIF                 : 
+ELSE                 : 7
+EXCEPT               : 
+FALSE                : 
+FINALLY              : 
+FLECHA               : 
+FLECHA_GORDA         : 
+FOR                  : 9
+FROM                 : 
+GLOBAL               : 
+GUION_BAJO           : 
+IDENTIFICADOR        : 4 9 10 11 12 31 32
+IF                   : 6 7
+IGUAL                : 19
+IMPORT               : 
+IN                   : 9
+INCREMENTO           : 
+INTERROGACION        : 
+IS                   : 
+LAMBDA               : 
+LLAVE_DER            : 
+LLAVE_IZQ            : 
+MAS                  : 14
+MAS_IGUAL            : 
+MATCH                : 
+MAYOR                : 23
+MAYORIGUAL           : 24
+MAYOR_MAYOR          : 
+MENOR                : 21
+MENORIGUAL           : 22
+MENOR_MENOR          : 
+MENOS                : 15 27
+MENOS_IGUAL          : 
+MENOS_MAYOR          : 
+MODULO               : 18
+MODULO_IGUAL         : 
+NONE                 : 
+NONLOCAL             : 
+NOT                  : 
+NOT_BIN              : 
+NUMERO               : 29
+OR                   : 26
+OR_BIN               : 
+OR_IGUAL             : 
+PARENTESIS_DER       : 10 28 32
+PARENTESIS_IZQ       : 10 28 32
+PASS                 : 
+POR                  : 16
+PORCENTAJE           : 
+PORCENTAJE_IGUAL     : 
+POR_IGUAL            : 
+POTENCIA             : 
+PREGUNTA_DOS_PUNTOS  : 
+PUNTO                : 
+PUNTO_COMA           : 
+PUNTO_PUNTO          : 
+PUNTO_PUNTO_PUNTO    : 
+RAISE                : 
+RETURN               : 
+SLASH                : 
+TILDE                : 
+TRUE                 : 
+TRY                  : 
+WHILE                : 8
+WITH                 : 
+XOR_BIN              : 
+XOR_IGUAL            : 
+YIELD                : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+args                 : 32 33
+expression           : 4 5 6 7 8 9 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 28 33 34
+params               : 10 11
+program              : 0
+statement            : 2 3
+statements           : 1 2 6 7 7 8 9 10
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statements
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    program                        shift and go to state 1
+    statements                     shift and go to state 2
+    statement                      shift and go to state 3
+    expression                     shift and go to state 5
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statements .
+    (2) statements -> statements . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    $end            reduce using rule 1 (program -> statements .)
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    statement                      shift and go to state 14
+    expression                     shift and go to state 5
+
+state 3
+
+    (3) statements -> statement .
+
+    IDENTIFICADOR   reduce using rule 3 (statements -> statement .)
+    IF              reduce using rule 3 (statements -> statement .)
+    WHILE           reduce using rule 3 (statements -> statement .)
+    FOR             reduce using rule 3 (statements -> statement .)
+    DEF             reduce using rule 3 (statements -> statement .)
+    MENOS           reduce using rule 3 (statements -> statement .)
+    PARENTESIS_IZQ  reduce using rule 3 (statements -> statement .)
+    NUMERO          reduce using rule 3 (statements -> statement .)
+    CADENA          reduce using rule 3 (statements -> statement .)
+    $end            reduce using rule 3 (statements -> statement .)
+    ELSE            reduce using rule 3 (statements -> statement .)
+
+
+state 4
+
+    (4) statement -> IDENTIFICADOR . ASIGNAR expression
+    (31) expression -> IDENTIFICADOR .
+    (32) expression -> IDENTIFICADOR . PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+    ASIGNAR         shift and go to state 15
+    MAS             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MENOS           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    POR             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    DIVIDIDO        reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MODULO          reduce using rule 31 (expression -> IDENTIFICADOR .)
+    IGUAL           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    DIFERENTE       reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MENOR           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MENORIGUAL      reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MAYOR           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MAYORIGUAL      reduce using rule 31 (expression -> IDENTIFICADOR .)
+    AND             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    OR              reduce using rule 31 (expression -> IDENTIFICADOR .)
+    IDENTIFICADOR   reduce using rule 31 (expression -> IDENTIFICADOR .)
+    IF              reduce using rule 31 (expression -> IDENTIFICADOR .)
+    WHILE           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    FOR             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    DEF             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    NUMERO          reduce using rule 31 (expression -> IDENTIFICADOR .)
+    CADENA          reduce using rule 31 (expression -> IDENTIFICADOR .)
+    $end            reduce using rule 31 (expression -> IDENTIFICADOR .)
+    ELSE            reduce using rule 31 (expression -> IDENTIFICADOR .)
+    PARENTESIS_IZQ  shift and go to state 16
+
+  ! PARENTESIS_IZQ  [ reduce using rule 31 (expression -> IDENTIFICADOR .) ]
+
+
+state 5
+
+    (5) statement -> expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+  ! shift/reduce conflict for MENOS resolved as shift
+    IDENTIFICADOR   reduce using rule 5 (statement -> expression .)
+    IF              reduce using rule 5 (statement -> expression .)
+    WHILE           reduce using rule 5 (statement -> expression .)
+    FOR             reduce using rule 5 (statement -> expression .)
+    DEF             reduce using rule 5 (statement -> expression .)
+    PARENTESIS_IZQ  reduce using rule 5 (statement -> expression .)
+    NUMERO          reduce using rule 5 (statement -> expression .)
+    CADENA          reduce using rule 5 (statement -> expression .)
+    $end            reduce using rule 5 (statement -> expression .)
+    ELSE            reduce using rule 5 (statement -> expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+  ! MENOS           [ reduce using rule 5 (statement -> expression .) ]
+
+
+state 6
+
+    (6) statement -> IF . expression DOS_PUNTOS statements
+    (7) statement -> IF . expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 30
+
+state 7
+
+    (8) statement -> WHILE . expression DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 32
+
+state 8
+
+    (9) statement -> FOR . IDENTIFICADOR IN expression DOS_PUNTOS statements
+
+    IDENTIFICADOR   shift and go to state 33
+
+
+state 9
+
+    (10) statement -> DEF . IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+
+    IDENTIFICADOR   shift and go to state 34
+
+
+state 10
+
+    (28) expression -> PARENTESIS_IZQ . expression PARENTESIS_DER
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 35
+
+state 11
+
+    (27) expression -> MENOS . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 36
+
+state 12
+
+    (29) expression -> NUMERO .
+
+    MAS             reduce using rule 29 (expression -> NUMERO .)
+    MENOS           reduce using rule 29 (expression -> NUMERO .)
+    POR             reduce using rule 29 (expression -> NUMERO .)
+    DIVIDIDO        reduce using rule 29 (expression -> NUMERO .)
+    MODULO          reduce using rule 29 (expression -> NUMERO .)
+    IGUAL           reduce using rule 29 (expression -> NUMERO .)
+    DIFERENTE       reduce using rule 29 (expression -> NUMERO .)
+    MENOR           reduce using rule 29 (expression -> NUMERO .)
+    MENORIGUAL      reduce using rule 29 (expression -> NUMERO .)
+    MAYOR           reduce using rule 29 (expression -> NUMERO .)
+    MAYORIGUAL      reduce using rule 29 (expression -> NUMERO .)
+    AND             reduce using rule 29 (expression -> NUMERO .)
+    OR              reduce using rule 29 (expression -> NUMERO .)
+    IDENTIFICADOR   reduce using rule 29 (expression -> NUMERO .)
+    IF              reduce using rule 29 (expression -> NUMERO .)
+    WHILE           reduce using rule 29 (expression -> NUMERO .)
+    FOR             reduce using rule 29 (expression -> NUMERO .)
+    DEF             reduce using rule 29 (expression -> NUMERO .)
+    PARENTESIS_IZQ  reduce using rule 29 (expression -> NUMERO .)
+    NUMERO          reduce using rule 29 (expression -> NUMERO .)
+    CADENA          reduce using rule 29 (expression -> NUMERO .)
+    $end            reduce using rule 29 (expression -> NUMERO .)
+    DOS_PUNTOS      reduce using rule 29 (expression -> NUMERO .)
+    PARENTESIS_DER  reduce using rule 29 (expression -> NUMERO .)
+    ELSE            reduce using rule 29 (expression -> NUMERO .)
+    COMA            reduce using rule 29 (expression -> NUMERO .)
+
+
+state 13
+
+    (30) expression -> CADENA .
+
+    MAS             reduce using rule 30 (expression -> CADENA .)
+    MENOS           reduce using rule 30 (expression -> CADENA .)
+    POR             reduce using rule 30 (expression -> CADENA .)
+    DIVIDIDO        reduce using rule 30 (expression -> CADENA .)
+    MODULO          reduce using rule 30 (expression -> CADENA .)
+    IGUAL           reduce using rule 30 (expression -> CADENA .)
+    DIFERENTE       reduce using rule 30 (expression -> CADENA .)
+    MENOR           reduce using rule 30 (expression -> CADENA .)
+    MENORIGUAL      reduce using rule 30 (expression -> CADENA .)
+    MAYOR           reduce using rule 30 (expression -> CADENA .)
+    MAYORIGUAL      reduce using rule 30 (expression -> CADENA .)
+    AND             reduce using rule 30 (expression -> CADENA .)
+    OR              reduce using rule 30 (expression -> CADENA .)
+    IDENTIFICADOR   reduce using rule 30 (expression -> CADENA .)
+    IF              reduce using rule 30 (expression -> CADENA .)
+    WHILE           reduce using rule 30 (expression -> CADENA .)
+    FOR             reduce using rule 30 (expression -> CADENA .)
+    DEF             reduce using rule 30 (expression -> CADENA .)
+    PARENTESIS_IZQ  reduce using rule 30 (expression -> CADENA .)
+    NUMERO          reduce using rule 30 (expression -> CADENA .)
+    CADENA          reduce using rule 30 (expression -> CADENA .)
+    $end            reduce using rule 30 (expression -> CADENA .)
+    DOS_PUNTOS      reduce using rule 30 (expression -> CADENA .)
+    PARENTESIS_DER  reduce using rule 30 (expression -> CADENA .)
+    ELSE            reduce using rule 30 (expression -> CADENA .)
+    COMA            reduce using rule 30 (expression -> CADENA .)
+
+
+state 14
+
+    (2) statements -> statements statement .
+
+    IDENTIFICADOR   reduce using rule 2 (statements -> statements statement .)
+    IF              reduce using rule 2 (statements -> statements statement .)
+    WHILE           reduce using rule 2 (statements -> statements statement .)
+    FOR             reduce using rule 2 (statements -> statements statement .)
+    DEF             reduce using rule 2 (statements -> statements statement .)
+    MENOS           reduce using rule 2 (statements -> statements statement .)
+    PARENTESIS_IZQ  reduce using rule 2 (statements -> statements statement .)
+    NUMERO          reduce using rule 2 (statements -> statements statement .)
+    CADENA          reduce using rule 2 (statements -> statements statement .)
+    $end            reduce using rule 2 (statements -> statements statement .)
+    ELSE            reduce using rule 2 (statements -> statements statement .)
+
+
+state 15
+
+    (4) statement -> IDENTIFICADOR ASIGNAR . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 37
+
+state 16
+
+    (32) expression -> IDENTIFICADOR PARENTESIS_IZQ . args PARENTESIS_DER
+    (33) args -> . args COMA expression
+    (34) args -> . expression
+    (35) args -> .
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    PARENTESIS_DER  reduce using rule 35 (args -> .)
+    COMA            reduce using rule 35 (args -> .)
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    args                           shift and go to state 38
+    expression                     shift and go to state 39
+
+state 17
+
+    (14) expression -> expression MAS . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 40
+
+state 18
+
+    (15) expression -> expression MENOS . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 41
+
+state 19
+
+    (16) expression -> expression POR . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 42
+
+state 20
+
+    (17) expression -> expression DIVIDIDO . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 43
+
+state 21
+
+    (18) expression -> expression MODULO . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 44
+
+state 22
+
+    (19) expression -> expression IGUAL . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 45
+
+state 23
+
+    (20) expression -> expression DIFERENTE . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 46
+
+state 24
+
+    (21) expression -> expression MENOR . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 47
+
+state 25
+
+    (22) expression -> expression MENORIGUAL . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 48
+
+state 26
+
+    (23) expression -> expression MAYOR . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 49
+
+state 27
+
+    (24) expression -> expression MAYORIGUAL . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 50
+
+state 28
+
+    (25) expression -> expression AND . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 51
+
+state 29
+
+    (26) expression -> expression OR . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 52
+
+state 30
+
+    (6) statement -> IF expression . DOS_PUNTOS statements
+    (7) statement -> IF expression . DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    DOS_PUNTOS      shift and go to state 53
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+
+state 31
+
+    (31) expression -> IDENTIFICADOR .
+    (32) expression -> IDENTIFICADOR . PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+    DOS_PUNTOS      reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MAS             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MENOS           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    POR             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    DIVIDIDO        reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MODULO          reduce using rule 31 (expression -> IDENTIFICADOR .)
+    IGUAL           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    DIFERENTE       reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MENOR           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MENORIGUAL      reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MAYOR           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    MAYORIGUAL      reduce using rule 31 (expression -> IDENTIFICADOR .)
+    AND             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    OR              reduce using rule 31 (expression -> IDENTIFICADOR .)
+    PARENTESIS_DER  reduce using rule 31 (expression -> IDENTIFICADOR .)
+    IDENTIFICADOR   reduce using rule 31 (expression -> IDENTIFICADOR .)
+    IF              reduce using rule 31 (expression -> IDENTIFICADOR .)
+    WHILE           reduce using rule 31 (expression -> IDENTIFICADOR .)
+    FOR             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    DEF             reduce using rule 31 (expression -> IDENTIFICADOR .)
+    NUMERO          reduce using rule 31 (expression -> IDENTIFICADOR .)
+    CADENA          reduce using rule 31 (expression -> IDENTIFICADOR .)
+    $end            reduce using rule 31 (expression -> IDENTIFICADOR .)
+    ELSE            reduce using rule 31 (expression -> IDENTIFICADOR .)
+    COMA            reduce using rule 31 (expression -> IDENTIFICADOR .)
+    PARENTESIS_IZQ  shift and go to state 16
+
+  ! PARENTESIS_IZQ  [ reduce using rule 31 (expression -> IDENTIFICADOR .) ]
+
+
+state 32
+
+    (8) statement -> WHILE expression . DOS_PUNTOS statements
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    DOS_PUNTOS      shift and go to state 54
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+
+state 33
+
+    (9) statement -> FOR IDENTIFICADOR . IN expression DOS_PUNTOS statements
+
+    IN              shift and go to state 55
+
+
+state 34
+
+    (10) statement -> DEF IDENTIFICADOR . PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+
+    PARENTESIS_IZQ  shift and go to state 56
+
+
+state 35
+
+    (28) expression -> PARENTESIS_IZQ expression . PARENTESIS_DER
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    PARENTESIS_DER  shift and go to state 57
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+
+state 36
+
+    (27) expression -> MENOS expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    MAS             reduce using rule 27 (expression -> MENOS expression .)
+    MENOS           reduce using rule 27 (expression -> MENOS expression .)
+    POR             reduce using rule 27 (expression -> MENOS expression .)
+    DIVIDIDO        reduce using rule 27 (expression -> MENOS expression .)
+    MODULO          reduce using rule 27 (expression -> MENOS expression .)
+    IGUAL           reduce using rule 27 (expression -> MENOS expression .)
+    DIFERENTE       reduce using rule 27 (expression -> MENOS expression .)
+    MENOR           reduce using rule 27 (expression -> MENOS expression .)
+    MENORIGUAL      reduce using rule 27 (expression -> MENOS expression .)
+    MAYOR           reduce using rule 27 (expression -> MENOS expression .)
+    MAYORIGUAL      reduce using rule 27 (expression -> MENOS expression .)
+    AND             reduce using rule 27 (expression -> MENOS expression .)
+    OR              reduce using rule 27 (expression -> MENOS expression .)
+    IDENTIFICADOR   reduce using rule 27 (expression -> MENOS expression .)
+    IF              reduce using rule 27 (expression -> MENOS expression .)
+    WHILE           reduce using rule 27 (expression -> MENOS expression .)
+    FOR             reduce using rule 27 (expression -> MENOS expression .)
+    DEF             reduce using rule 27 (expression -> MENOS expression .)
+    PARENTESIS_IZQ  reduce using rule 27 (expression -> MENOS expression .)
+    NUMERO          reduce using rule 27 (expression -> MENOS expression .)
+    CADENA          reduce using rule 27 (expression -> MENOS expression .)
+    $end            reduce using rule 27 (expression -> MENOS expression .)
+    DOS_PUNTOS      reduce using rule 27 (expression -> MENOS expression .)
+    PARENTESIS_DER  reduce using rule 27 (expression -> MENOS expression .)
+    ELSE            reduce using rule 27 (expression -> MENOS expression .)
+    COMA            reduce using rule 27 (expression -> MENOS expression .)
+
+  ! MAS             [ shift and go to state 17 ]
+  ! MENOS           [ shift and go to state 18 ]
+  ! POR             [ shift and go to state 19 ]
+  ! DIVIDIDO        [ shift and go to state 20 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 37
+
+    (4) statement -> IDENTIFICADOR ASIGNAR expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+  ! shift/reduce conflict for MENOS resolved as shift
+    IDENTIFICADOR   reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    IF              reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    WHILE           reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    FOR             reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    DEF             reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    PARENTESIS_IZQ  reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    NUMERO          reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    CADENA          reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    $end            reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    ELSE            reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+  ! MENOS           [ reduce using rule 4 (statement -> IDENTIFICADOR ASIGNAR expression .) ]
+
+
+state 38
+
+    (32) expression -> IDENTIFICADOR PARENTESIS_IZQ args . PARENTESIS_DER
+    (33) args -> args . COMA expression
+
+    PARENTESIS_DER  shift and go to state 58
+    COMA            shift and go to state 59
+
+
+state 39
+
+    (34) args -> expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    PARENTESIS_DER  reduce using rule 34 (args -> expression .)
+    COMA            reduce using rule 34 (args -> expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+
+state 40
+
+    (14) expression -> expression MAS expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    MAS             reduce using rule 14 (expression -> expression MAS expression .)
+    MENOS           reduce using rule 14 (expression -> expression MAS expression .)
+    IGUAL           reduce using rule 14 (expression -> expression MAS expression .)
+    DIFERENTE       reduce using rule 14 (expression -> expression MAS expression .)
+    MENOR           reduce using rule 14 (expression -> expression MAS expression .)
+    MENORIGUAL      reduce using rule 14 (expression -> expression MAS expression .)
+    MAYOR           reduce using rule 14 (expression -> expression MAS expression .)
+    MAYORIGUAL      reduce using rule 14 (expression -> expression MAS expression .)
+    AND             reduce using rule 14 (expression -> expression MAS expression .)
+    OR              reduce using rule 14 (expression -> expression MAS expression .)
+    IDENTIFICADOR   reduce using rule 14 (expression -> expression MAS expression .)
+    IF              reduce using rule 14 (expression -> expression MAS expression .)
+    WHILE           reduce using rule 14 (expression -> expression MAS expression .)
+    FOR             reduce using rule 14 (expression -> expression MAS expression .)
+    DEF             reduce using rule 14 (expression -> expression MAS expression .)
+    PARENTESIS_IZQ  reduce using rule 14 (expression -> expression MAS expression .)
+    NUMERO          reduce using rule 14 (expression -> expression MAS expression .)
+    CADENA          reduce using rule 14 (expression -> expression MAS expression .)
+    $end            reduce using rule 14 (expression -> expression MAS expression .)
+    DOS_PUNTOS      reduce using rule 14 (expression -> expression MAS expression .)
+    PARENTESIS_DER  reduce using rule 14 (expression -> expression MAS expression .)
+    ELSE            reduce using rule 14 (expression -> expression MAS expression .)
+    COMA            reduce using rule 14 (expression -> expression MAS expression .)
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+
+  ! POR             [ reduce using rule 14 (expression -> expression MAS expression .) ]
+  ! DIVIDIDO        [ reduce using rule 14 (expression -> expression MAS expression .) ]
+  ! MODULO          [ reduce using rule 14 (expression -> expression MAS expression .) ]
+  ! MAS             [ shift and go to state 17 ]
+  ! MENOS           [ shift and go to state 18 ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 41
+
+    (15) expression -> expression MENOS expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    MAS             reduce using rule 15 (expression -> expression MENOS expression .)
+    MENOS           reduce using rule 15 (expression -> expression MENOS expression .)
+    IGUAL           reduce using rule 15 (expression -> expression MENOS expression .)
+    DIFERENTE       reduce using rule 15 (expression -> expression MENOS expression .)
+    MENOR           reduce using rule 15 (expression -> expression MENOS expression .)
+    MENORIGUAL      reduce using rule 15 (expression -> expression MENOS expression .)
+    MAYOR           reduce using rule 15 (expression -> expression MENOS expression .)
+    MAYORIGUAL      reduce using rule 15 (expression -> expression MENOS expression .)
+    AND             reduce using rule 15 (expression -> expression MENOS expression .)
+    OR              reduce using rule 15 (expression -> expression MENOS expression .)
+    IDENTIFICADOR   reduce using rule 15 (expression -> expression MENOS expression .)
+    IF              reduce using rule 15 (expression -> expression MENOS expression .)
+    WHILE           reduce using rule 15 (expression -> expression MENOS expression .)
+    FOR             reduce using rule 15 (expression -> expression MENOS expression .)
+    DEF             reduce using rule 15 (expression -> expression MENOS expression .)
+    PARENTESIS_IZQ  reduce using rule 15 (expression -> expression MENOS expression .)
+    NUMERO          reduce using rule 15 (expression -> expression MENOS expression .)
+    CADENA          reduce using rule 15 (expression -> expression MENOS expression .)
+    $end            reduce using rule 15 (expression -> expression MENOS expression .)
+    DOS_PUNTOS      reduce using rule 15 (expression -> expression MENOS expression .)
+    PARENTESIS_DER  reduce using rule 15 (expression -> expression MENOS expression .)
+    ELSE            reduce using rule 15 (expression -> expression MENOS expression .)
+    COMA            reduce using rule 15 (expression -> expression MENOS expression .)
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+
+  ! POR             [ reduce using rule 15 (expression -> expression MENOS expression .) ]
+  ! DIVIDIDO        [ reduce using rule 15 (expression -> expression MENOS expression .) ]
+  ! MODULO          [ reduce using rule 15 (expression -> expression MENOS expression .) ]
+  ! MAS             [ shift and go to state 17 ]
+  ! MENOS           [ shift and go to state 18 ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 42
+
+    (16) expression -> expression POR expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    MAS             reduce using rule 16 (expression -> expression POR expression .)
+    MENOS           reduce using rule 16 (expression -> expression POR expression .)
+    POR             reduce using rule 16 (expression -> expression POR expression .)
+    DIVIDIDO        reduce using rule 16 (expression -> expression POR expression .)
+    MODULO          reduce using rule 16 (expression -> expression POR expression .)
+    IGUAL           reduce using rule 16 (expression -> expression POR expression .)
+    DIFERENTE       reduce using rule 16 (expression -> expression POR expression .)
+    MENOR           reduce using rule 16 (expression -> expression POR expression .)
+    MENORIGUAL      reduce using rule 16 (expression -> expression POR expression .)
+    MAYOR           reduce using rule 16 (expression -> expression POR expression .)
+    MAYORIGUAL      reduce using rule 16 (expression -> expression POR expression .)
+    AND             reduce using rule 16 (expression -> expression POR expression .)
+    OR              reduce using rule 16 (expression -> expression POR expression .)
+    IDENTIFICADOR   reduce using rule 16 (expression -> expression POR expression .)
+    IF              reduce using rule 16 (expression -> expression POR expression .)
+    WHILE           reduce using rule 16 (expression -> expression POR expression .)
+    FOR             reduce using rule 16 (expression -> expression POR expression .)
+    DEF             reduce using rule 16 (expression -> expression POR expression .)
+    PARENTESIS_IZQ  reduce using rule 16 (expression -> expression POR expression .)
+    NUMERO          reduce using rule 16 (expression -> expression POR expression .)
+    CADENA          reduce using rule 16 (expression -> expression POR expression .)
+    $end            reduce using rule 16 (expression -> expression POR expression .)
+    DOS_PUNTOS      reduce using rule 16 (expression -> expression POR expression .)
+    PARENTESIS_DER  reduce using rule 16 (expression -> expression POR expression .)
+    ELSE            reduce using rule 16 (expression -> expression POR expression .)
+    COMA            reduce using rule 16 (expression -> expression POR expression .)
+
+  ! MAS             [ shift and go to state 17 ]
+  ! MENOS           [ shift and go to state 18 ]
+  ! POR             [ shift and go to state 19 ]
+  ! DIVIDIDO        [ shift and go to state 20 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 43
+
+    (17) expression -> expression DIVIDIDO expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    MAS             reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    MENOS           reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    POR             reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    DIVIDIDO        reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    MODULO          reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    IGUAL           reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    DIFERENTE       reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    MENOR           reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    MENORIGUAL      reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    MAYOR           reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    MAYORIGUAL      reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    AND             reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    OR              reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    IDENTIFICADOR   reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    IF              reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    WHILE           reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    FOR             reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    DEF             reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    PARENTESIS_IZQ  reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    NUMERO          reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    CADENA          reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    $end            reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    DOS_PUNTOS      reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    PARENTESIS_DER  reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    ELSE            reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+    COMA            reduce using rule 17 (expression -> expression DIVIDIDO expression .)
+
+  ! MAS             [ shift and go to state 17 ]
+  ! MENOS           [ shift and go to state 18 ]
+  ! POR             [ shift and go to state 19 ]
+  ! DIVIDIDO        [ shift and go to state 20 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 44
+
+    (18) expression -> expression MODULO expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    MAS             reduce using rule 18 (expression -> expression MODULO expression .)
+    MENOS           reduce using rule 18 (expression -> expression MODULO expression .)
+    POR             reduce using rule 18 (expression -> expression MODULO expression .)
+    DIVIDIDO        reduce using rule 18 (expression -> expression MODULO expression .)
+    MODULO          reduce using rule 18 (expression -> expression MODULO expression .)
+    IGUAL           reduce using rule 18 (expression -> expression MODULO expression .)
+    DIFERENTE       reduce using rule 18 (expression -> expression MODULO expression .)
+    MENOR           reduce using rule 18 (expression -> expression MODULO expression .)
+    MENORIGUAL      reduce using rule 18 (expression -> expression MODULO expression .)
+    MAYOR           reduce using rule 18 (expression -> expression MODULO expression .)
+    MAYORIGUAL      reduce using rule 18 (expression -> expression MODULO expression .)
+    AND             reduce using rule 18 (expression -> expression MODULO expression .)
+    OR              reduce using rule 18 (expression -> expression MODULO expression .)
+    IDENTIFICADOR   reduce using rule 18 (expression -> expression MODULO expression .)
+    IF              reduce using rule 18 (expression -> expression MODULO expression .)
+    WHILE           reduce using rule 18 (expression -> expression MODULO expression .)
+    FOR             reduce using rule 18 (expression -> expression MODULO expression .)
+    DEF             reduce using rule 18 (expression -> expression MODULO expression .)
+    PARENTESIS_IZQ  reduce using rule 18 (expression -> expression MODULO expression .)
+    NUMERO          reduce using rule 18 (expression -> expression MODULO expression .)
+    CADENA          reduce using rule 18 (expression -> expression MODULO expression .)
+    $end            reduce using rule 18 (expression -> expression MODULO expression .)
+    DOS_PUNTOS      reduce using rule 18 (expression -> expression MODULO expression .)
+    PARENTESIS_DER  reduce using rule 18 (expression -> expression MODULO expression .)
+    ELSE            reduce using rule 18 (expression -> expression MODULO expression .)
+    COMA            reduce using rule 18 (expression -> expression MODULO expression .)
+
+  ! MAS             [ shift and go to state 17 ]
+  ! MENOS           [ shift and go to state 18 ]
+  ! POR             [ shift and go to state 19 ]
+  ! DIVIDIDO        [ shift and go to state 20 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 45
+
+    (19) expression -> expression IGUAL expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    IGUAL           reduce using rule 19 (expression -> expression IGUAL expression .)
+    DIFERENTE       reduce using rule 19 (expression -> expression IGUAL expression .)
+    AND             reduce using rule 19 (expression -> expression IGUAL expression .)
+    OR              reduce using rule 19 (expression -> expression IGUAL expression .)
+    IDENTIFICADOR   reduce using rule 19 (expression -> expression IGUAL expression .)
+    IF              reduce using rule 19 (expression -> expression IGUAL expression .)
+    WHILE           reduce using rule 19 (expression -> expression IGUAL expression .)
+    FOR             reduce using rule 19 (expression -> expression IGUAL expression .)
+    DEF             reduce using rule 19 (expression -> expression IGUAL expression .)
+    PARENTESIS_IZQ  reduce using rule 19 (expression -> expression IGUAL expression .)
+    NUMERO          reduce using rule 19 (expression -> expression IGUAL expression .)
+    CADENA          reduce using rule 19 (expression -> expression IGUAL expression .)
+    $end            reduce using rule 19 (expression -> expression IGUAL expression .)
+    DOS_PUNTOS      reduce using rule 19 (expression -> expression IGUAL expression .)
+    PARENTESIS_DER  reduce using rule 19 (expression -> expression IGUAL expression .)
+    ELSE            reduce using rule 19 (expression -> expression IGUAL expression .)
+    COMA            reduce using rule 19 (expression -> expression IGUAL expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+
+  ! MAS             [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! MENOS           [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! POR             [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! DIVIDIDO        [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! MODULO          [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! MENOR           [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! MENORIGUAL      [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! MAYOR           [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! MAYORIGUAL      [ reduce using rule 19 (expression -> expression IGUAL expression .) ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 46
+
+    (20) expression -> expression DIFERENTE expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    IGUAL           reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    DIFERENTE       reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    AND             reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    OR              reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    IDENTIFICADOR   reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    IF              reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    WHILE           reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    FOR             reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    DEF             reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    PARENTESIS_IZQ  reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    NUMERO          reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    CADENA          reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    $end            reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    DOS_PUNTOS      reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    PARENTESIS_DER  reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    ELSE            reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    COMA            reduce using rule 20 (expression -> expression DIFERENTE expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+
+  ! MAS             [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! MENOS           [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! POR             [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! DIVIDIDO        [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! MODULO          [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! MENOR           [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! MENORIGUAL      [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! MAYOR           [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! MAYORIGUAL      [ reduce using rule 20 (expression -> expression DIFERENTE expression .) ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 47
+
+    (21) expression -> expression MENOR expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    IGUAL           reduce using rule 21 (expression -> expression MENOR expression .)
+    DIFERENTE       reduce using rule 21 (expression -> expression MENOR expression .)
+    MENOR           reduce using rule 21 (expression -> expression MENOR expression .)
+    MENORIGUAL      reduce using rule 21 (expression -> expression MENOR expression .)
+    MAYOR           reduce using rule 21 (expression -> expression MENOR expression .)
+    MAYORIGUAL      reduce using rule 21 (expression -> expression MENOR expression .)
+    AND             reduce using rule 21 (expression -> expression MENOR expression .)
+    OR              reduce using rule 21 (expression -> expression MENOR expression .)
+    IDENTIFICADOR   reduce using rule 21 (expression -> expression MENOR expression .)
+    IF              reduce using rule 21 (expression -> expression MENOR expression .)
+    WHILE           reduce using rule 21 (expression -> expression MENOR expression .)
+    FOR             reduce using rule 21 (expression -> expression MENOR expression .)
+    DEF             reduce using rule 21 (expression -> expression MENOR expression .)
+    PARENTESIS_IZQ  reduce using rule 21 (expression -> expression MENOR expression .)
+    NUMERO          reduce using rule 21 (expression -> expression MENOR expression .)
+    CADENA          reduce using rule 21 (expression -> expression MENOR expression .)
+    $end            reduce using rule 21 (expression -> expression MENOR expression .)
+    DOS_PUNTOS      reduce using rule 21 (expression -> expression MENOR expression .)
+    PARENTESIS_DER  reduce using rule 21 (expression -> expression MENOR expression .)
+    ELSE            reduce using rule 21 (expression -> expression MENOR expression .)
+    COMA            reduce using rule 21 (expression -> expression MENOR expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+
+  ! MAS             [ reduce using rule 21 (expression -> expression MENOR expression .) ]
+  ! MENOS           [ reduce using rule 21 (expression -> expression MENOR expression .) ]
+  ! POR             [ reduce using rule 21 (expression -> expression MENOR expression .) ]
+  ! DIVIDIDO        [ reduce using rule 21 (expression -> expression MENOR expression .) ]
+  ! MODULO          [ reduce using rule 21 (expression -> expression MENOR expression .) ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 48
+
+    (22) expression -> expression MENORIGUAL expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    IGUAL           reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    DIFERENTE       reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    MENOR           reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    MENORIGUAL      reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    MAYOR           reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    MAYORIGUAL      reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    AND             reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    OR              reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    IDENTIFICADOR   reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    IF              reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    WHILE           reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    FOR             reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    DEF             reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    PARENTESIS_IZQ  reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    NUMERO          reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    CADENA          reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    $end            reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    DOS_PUNTOS      reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    PARENTESIS_DER  reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    ELSE            reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    COMA            reduce using rule 22 (expression -> expression MENORIGUAL expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+
+  ! MAS             [ reduce using rule 22 (expression -> expression MENORIGUAL expression .) ]
+  ! MENOS           [ reduce using rule 22 (expression -> expression MENORIGUAL expression .) ]
+  ! POR             [ reduce using rule 22 (expression -> expression MENORIGUAL expression .) ]
+  ! DIVIDIDO        [ reduce using rule 22 (expression -> expression MENORIGUAL expression .) ]
+  ! MODULO          [ reduce using rule 22 (expression -> expression MENORIGUAL expression .) ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 49
+
+    (23) expression -> expression MAYOR expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    IGUAL           reduce using rule 23 (expression -> expression MAYOR expression .)
+    DIFERENTE       reduce using rule 23 (expression -> expression MAYOR expression .)
+    MENOR           reduce using rule 23 (expression -> expression MAYOR expression .)
+    MENORIGUAL      reduce using rule 23 (expression -> expression MAYOR expression .)
+    MAYOR           reduce using rule 23 (expression -> expression MAYOR expression .)
+    MAYORIGUAL      reduce using rule 23 (expression -> expression MAYOR expression .)
+    AND             reduce using rule 23 (expression -> expression MAYOR expression .)
+    OR              reduce using rule 23 (expression -> expression MAYOR expression .)
+    IDENTIFICADOR   reduce using rule 23 (expression -> expression MAYOR expression .)
+    IF              reduce using rule 23 (expression -> expression MAYOR expression .)
+    WHILE           reduce using rule 23 (expression -> expression MAYOR expression .)
+    FOR             reduce using rule 23 (expression -> expression MAYOR expression .)
+    DEF             reduce using rule 23 (expression -> expression MAYOR expression .)
+    PARENTESIS_IZQ  reduce using rule 23 (expression -> expression MAYOR expression .)
+    NUMERO          reduce using rule 23 (expression -> expression MAYOR expression .)
+    CADENA          reduce using rule 23 (expression -> expression MAYOR expression .)
+    $end            reduce using rule 23 (expression -> expression MAYOR expression .)
+    DOS_PUNTOS      reduce using rule 23 (expression -> expression MAYOR expression .)
+    PARENTESIS_DER  reduce using rule 23 (expression -> expression MAYOR expression .)
+    ELSE            reduce using rule 23 (expression -> expression MAYOR expression .)
+    COMA            reduce using rule 23 (expression -> expression MAYOR expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+
+  ! MAS             [ reduce using rule 23 (expression -> expression MAYOR expression .) ]
+  ! MENOS           [ reduce using rule 23 (expression -> expression MAYOR expression .) ]
+  ! POR             [ reduce using rule 23 (expression -> expression MAYOR expression .) ]
+  ! DIVIDIDO        [ reduce using rule 23 (expression -> expression MAYOR expression .) ]
+  ! MODULO          [ reduce using rule 23 (expression -> expression MAYOR expression .) ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 50
+
+    (24) expression -> expression MAYORIGUAL expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    IGUAL           reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    DIFERENTE       reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    MENOR           reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    MENORIGUAL      reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    MAYOR           reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    MAYORIGUAL      reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    AND             reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    OR              reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    IDENTIFICADOR   reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    IF              reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    WHILE           reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    FOR             reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    DEF             reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    PARENTESIS_IZQ  reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    NUMERO          reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    CADENA          reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    $end            reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    DOS_PUNTOS      reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    PARENTESIS_DER  reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    ELSE            reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    COMA            reduce using rule 24 (expression -> expression MAYORIGUAL expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+
+  ! MAS             [ reduce using rule 24 (expression -> expression MAYORIGUAL expression .) ]
+  ! MENOS           [ reduce using rule 24 (expression -> expression MAYORIGUAL expression .) ]
+  ! POR             [ reduce using rule 24 (expression -> expression MAYORIGUAL expression .) ]
+  ! DIVIDIDO        [ reduce using rule 24 (expression -> expression MAYORIGUAL expression .) ]
+  ! MODULO          [ reduce using rule 24 (expression -> expression MAYORIGUAL expression .) ]
+  ! IGUAL           [ shift and go to state 22 ]
+  ! DIFERENTE       [ shift and go to state 23 ]
+  ! MENOR           [ shift and go to state 24 ]
+  ! MENORIGUAL      [ shift and go to state 25 ]
+  ! MAYOR           [ shift and go to state 26 ]
+  ! MAYORIGUAL      [ shift and go to state 27 ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 51
+
+    (25) expression -> expression AND expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    AND             reduce using rule 25 (expression -> expression AND expression .)
+    OR              reduce using rule 25 (expression -> expression AND expression .)
+    IDENTIFICADOR   reduce using rule 25 (expression -> expression AND expression .)
+    IF              reduce using rule 25 (expression -> expression AND expression .)
+    WHILE           reduce using rule 25 (expression -> expression AND expression .)
+    FOR             reduce using rule 25 (expression -> expression AND expression .)
+    DEF             reduce using rule 25 (expression -> expression AND expression .)
+    PARENTESIS_IZQ  reduce using rule 25 (expression -> expression AND expression .)
+    NUMERO          reduce using rule 25 (expression -> expression AND expression .)
+    CADENA          reduce using rule 25 (expression -> expression AND expression .)
+    $end            reduce using rule 25 (expression -> expression AND expression .)
+    DOS_PUNTOS      reduce using rule 25 (expression -> expression AND expression .)
+    PARENTESIS_DER  reduce using rule 25 (expression -> expression AND expression .)
+    ELSE            reduce using rule 25 (expression -> expression AND expression .)
+    COMA            reduce using rule 25 (expression -> expression AND expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+
+  ! MAS             [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! MENOS           [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! POR             [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! DIVIDIDO        [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! MODULO          [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! IGUAL           [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! DIFERENTE       [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! MENOR           [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! MENORIGUAL      [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! MAYOR           [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! MAYORIGUAL      [ reduce using rule 25 (expression -> expression AND expression .) ]
+  ! AND             [ shift and go to state 28 ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 52
+
+    (26) expression -> expression OR expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    OR              reduce using rule 26 (expression -> expression OR expression .)
+    IDENTIFICADOR   reduce using rule 26 (expression -> expression OR expression .)
+    IF              reduce using rule 26 (expression -> expression OR expression .)
+    WHILE           reduce using rule 26 (expression -> expression OR expression .)
+    FOR             reduce using rule 26 (expression -> expression OR expression .)
+    DEF             reduce using rule 26 (expression -> expression OR expression .)
+    PARENTESIS_IZQ  reduce using rule 26 (expression -> expression OR expression .)
+    NUMERO          reduce using rule 26 (expression -> expression OR expression .)
+    CADENA          reduce using rule 26 (expression -> expression OR expression .)
+    $end            reduce using rule 26 (expression -> expression OR expression .)
+    DOS_PUNTOS      reduce using rule 26 (expression -> expression OR expression .)
+    PARENTESIS_DER  reduce using rule 26 (expression -> expression OR expression .)
+    ELSE            reduce using rule 26 (expression -> expression OR expression .)
+    COMA            reduce using rule 26 (expression -> expression OR expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+
+  ! MAS             [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! MENOS           [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! POR             [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! DIVIDIDO        [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! MODULO          [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! IGUAL           [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! DIFERENTE       [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! MENOR           [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! MENORIGUAL      [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! MAYOR           [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! MAYORIGUAL      [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! AND             [ reduce using rule 26 (expression -> expression OR expression .) ]
+  ! OR              [ shift and go to state 29 ]
+
+
+state 53
+
+    (6) statement -> IF expression DOS_PUNTOS . statements
+    (7) statement -> IF expression DOS_PUNTOS . statements ELSE DOS_PUNTOS statements
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    expression                     shift and go to state 5
+    statements                     shift and go to state 60
+    statement                      shift and go to state 3
+
+state 54
+
+    (8) statement -> WHILE expression DOS_PUNTOS . statements
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    expression                     shift and go to state 5
+    statements                     shift and go to state 61
+    statement                      shift and go to state 3
+
+state 55
+
+    (9) statement -> FOR IDENTIFICADOR IN . expression DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 62
+
+state 56
+
+    (10) statement -> DEF IDENTIFICADOR PARENTESIS_IZQ . params PARENTESIS_DER DOS_PUNTOS statements
+    (11) params -> . params COMA IDENTIFICADOR
+    (12) params -> . IDENTIFICADOR
+    (13) params -> .
+
+    IDENTIFICADOR   shift and go to state 63
+    PARENTESIS_DER  reduce using rule 13 (params -> .)
+    COMA            reduce using rule 13 (params -> .)
+
+    params                         shift and go to state 64
+
+state 57
+
+    (28) expression -> PARENTESIS_IZQ expression PARENTESIS_DER .
+
+    MAS             reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    MENOS           reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    POR             reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    DIVIDIDO        reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    MODULO          reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    IGUAL           reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    DIFERENTE       reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    MENOR           reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    MENORIGUAL      reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    MAYOR           reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    MAYORIGUAL      reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    AND             reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    OR              reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    IDENTIFICADOR   reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    IF              reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    WHILE           reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    FOR             reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    DEF             reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    PARENTESIS_IZQ  reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    NUMERO          reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    CADENA          reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    $end            reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    DOS_PUNTOS      reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    PARENTESIS_DER  reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    ELSE            reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+    COMA            reduce using rule 28 (expression -> PARENTESIS_IZQ expression PARENTESIS_DER .)
+
+
+state 58
+
+    (32) expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .
+
+    MAS             reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    MENOS           reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    POR             reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    DIVIDIDO        reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    MODULO          reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    IGUAL           reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    DIFERENTE       reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    MENOR           reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    MENORIGUAL      reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    MAYOR           reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    MAYORIGUAL      reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    AND             reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    OR              reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    IDENTIFICADOR   reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    IF              reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    WHILE           reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    FOR             reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    DEF             reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    PARENTESIS_IZQ  reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    NUMERO          reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    CADENA          reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    $end            reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    DOS_PUNTOS      reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    PARENTESIS_DER  reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    ELSE            reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+    COMA            reduce using rule 32 (expression -> IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER .)
+
+
+state 59
+
+    (33) args -> args COMA . expression
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+    IDENTIFICADOR   shift and go to state 31
+
+    expression                     shift and go to state 65
+
+state 60
+
+    (6) statement -> IF expression DOS_PUNTOS statements .
+    (7) statement -> IF expression DOS_PUNTOS statements . ELSE DOS_PUNTOS statements
+    (2) statements -> statements . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for ELSE resolved as shift
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for FOR resolved as shift
+  ! shift/reduce conflict for DEF resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+  ! shift/reduce conflict for NUMERO resolved as shift
+  ! shift/reduce conflict for CADENA resolved as shift
+    $end            reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .)
+    ELSE            shift and go to state 66
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+  ! IDENTIFICADOR   [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! IF              [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! WHILE           [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! FOR             [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! DEF             [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! MENOS           [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! PARENTESIS_IZQ  [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! NUMERO          [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! CADENA          [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+  ! ELSE            [ reduce using rule 6 (statement -> IF expression DOS_PUNTOS statements .) ]
+
+    expression                     shift and go to state 5
+    statement                      shift and go to state 14
+
+state 61
+
+    (8) statement -> WHILE expression DOS_PUNTOS statements .
+    (2) statements -> statements . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for FOR resolved as shift
+  ! shift/reduce conflict for DEF resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+  ! shift/reduce conflict for NUMERO resolved as shift
+  ! shift/reduce conflict for CADENA resolved as shift
+    $end            reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .)
+    ELSE            reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .)
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+  ! IDENTIFICADOR   [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! IF              [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! WHILE           [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! FOR             [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! DEF             [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! MENOS           [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! PARENTESIS_IZQ  [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! NUMERO          [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+  ! CADENA          [ reduce using rule 8 (statement -> WHILE expression DOS_PUNTOS statements .) ]
+
+    expression                     shift and go to state 5
+    statement                      shift and go to state 14
+
+state 62
+
+    (9) statement -> FOR IDENTIFICADOR IN expression . DOS_PUNTOS statements
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    DOS_PUNTOS      shift and go to state 67
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+
+state 63
+
+    (12) params -> IDENTIFICADOR .
+
+    PARENTESIS_DER  reduce using rule 12 (params -> IDENTIFICADOR .)
+    COMA            reduce using rule 12 (params -> IDENTIFICADOR .)
+
+
+state 64
+
+    (10) statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params . PARENTESIS_DER DOS_PUNTOS statements
+    (11) params -> params . COMA IDENTIFICADOR
+
+    PARENTESIS_DER  shift and go to state 68
+    COMA            shift and go to state 69
+
+
+state 65
+
+    (33) args -> args COMA expression .
+    (14) expression -> expression . MAS expression
+    (15) expression -> expression . MENOS expression
+    (16) expression -> expression . POR expression
+    (17) expression -> expression . DIVIDIDO expression
+    (18) expression -> expression . MODULO expression
+    (19) expression -> expression . IGUAL expression
+    (20) expression -> expression . DIFERENTE expression
+    (21) expression -> expression . MENOR expression
+    (22) expression -> expression . MENORIGUAL expression
+    (23) expression -> expression . MAYOR expression
+    (24) expression -> expression . MAYORIGUAL expression
+    (25) expression -> expression . AND expression
+    (26) expression -> expression . OR expression
+
+    PARENTESIS_DER  reduce using rule 33 (args -> args COMA expression .)
+    COMA            reduce using rule 33 (args -> args COMA expression .)
+    MAS             shift and go to state 17
+    MENOS           shift and go to state 18
+    POR             shift and go to state 19
+    DIVIDIDO        shift and go to state 20
+    MODULO          shift and go to state 21
+    IGUAL           shift and go to state 22
+    DIFERENTE       shift and go to state 23
+    MENOR           shift and go to state 24
+    MENORIGUAL      shift and go to state 25
+    MAYOR           shift and go to state 26
+    MAYORIGUAL      shift and go to state 27
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+
+
+state 66
+
+    (7) statement -> IF expression DOS_PUNTOS statements ELSE . DOS_PUNTOS statements
+
+    DOS_PUNTOS      shift and go to state 70
+
+
+state 67
+
+    (9) statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS . statements
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    expression                     shift and go to state 5
+    statements                     shift and go to state 71
+    statement                      shift and go to state 3
+
+state 68
+
+    (10) statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER . DOS_PUNTOS statements
+
+    DOS_PUNTOS      shift and go to state 72
+
+
+state 69
+
+    (11) params -> params COMA . IDENTIFICADOR
+
+    IDENTIFICADOR   shift and go to state 73
+
+
+state 70
+
+    (7) statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS . statements
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    expression                     shift and go to state 5
+    statements                     shift and go to state 74
+    statement                      shift and go to state 3
+
+state 71
+
+    (9) statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .
+    (2) statements -> statements . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for FOR resolved as shift
+  ! shift/reduce conflict for DEF resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+  ! shift/reduce conflict for NUMERO resolved as shift
+  ! shift/reduce conflict for CADENA resolved as shift
+    $end            reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .)
+    ELSE            reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .)
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+  ! IDENTIFICADOR   [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! IF              [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! WHILE           [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! FOR             [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! DEF             [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! MENOS           [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! PARENTESIS_IZQ  [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! NUMERO          [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+  ! CADENA          [ reduce using rule 9 (statement -> FOR IDENTIFICADOR IN expression DOS_PUNTOS statements .) ]
+
+    expression                     shift and go to state 5
+    statement                      shift and go to state 14
+
+state 72
+
+    (10) statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS . statements
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+    statements                     shift and go to state 75
+    statement                      shift and go to state 3
+    expression                     shift and go to state 5
+
+state 73
+
+    (11) params -> params COMA IDENTIFICADOR .
+
+    PARENTESIS_DER  reduce using rule 11 (params -> params COMA IDENTIFICADOR .)
+    COMA            reduce using rule 11 (params -> params COMA IDENTIFICADOR .)
+
+
+state 74
+
+    (7) statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .
+    (2) statements -> statements . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for FOR resolved as shift
+  ! shift/reduce conflict for DEF resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+  ! shift/reduce conflict for NUMERO resolved as shift
+  ! shift/reduce conflict for CADENA resolved as shift
+    $end            reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .)
+    ELSE            reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .)
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+  ! IDENTIFICADOR   [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! IF              [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! WHILE           [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! FOR             [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! DEF             [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! MENOS           [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! PARENTESIS_IZQ  [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! NUMERO          [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+  ! CADENA          [ reduce using rule 7 (statement -> IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements .) ]
+
+    expression                     shift and go to state 5
+    statement                      shift and go to state 14
+
+state 75
+
+    (10) statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .
+    (2) statements -> statements . statement
+    (4) statement -> . IDENTIFICADOR ASIGNAR expression
+    (5) statement -> . expression
+    (6) statement -> . IF expression DOS_PUNTOS statements
+    (7) statement -> . IF expression DOS_PUNTOS statements ELSE DOS_PUNTOS statements
+    (8) statement -> . WHILE expression DOS_PUNTOS statements
+    (9) statement -> . FOR IDENTIFICADOR IN expression DOS_PUNTOS statements
+    (10) statement -> . DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements
+    (14) expression -> . expression MAS expression
+    (15) expression -> . expression MENOS expression
+    (16) expression -> . expression POR expression
+    (17) expression -> . expression DIVIDIDO expression
+    (18) expression -> . expression MODULO expression
+    (19) expression -> . expression IGUAL expression
+    (20) expression -> . expression DIFERENTE expression
+    (21) expression -> . expression MENOR expression
+    (22) expression -> . expression MENORIGUAL expression
+    (23) expression -> . expression MAYOR expression
+    (24) expression -> . expression MAYORIGUAL expression
+    (25) expression -> . expression AND expression
+    (26) expression -> . expression OR expression
+    (27) expression -> . MENOS expression
+    (28) expression -> . PARENTESIS_IZQ expression PARENTESIS_DER
+    (29) expression -> . NUMERO
+    (30) expression -> . CADENA
+    (31) expression -> . IDENTIFICADOR
+    (32) expression -> . IDENTIFICADOR PARENTESIS_IZQ args PARENTESIS_DER
+
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for FOR resolved as shift
+  ! shift/reduce conflict for DEF resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for PARENTESIS_IZQ resolved as shift
+  ! shift/reduce conflict for NUMERO resolved as shift
+  ! shift/reduce conflict for CADENA resolved as shift
+    $end            reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .)
+    ELSE            reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .)
+    IDENTIFICADOR   shift and go to state 4
+    IF              shift and go to state 6
+    WHILE           shift and go to state 7
+    FOR             shift and go to state 8
+    DEF             shift and go to state 9
+    MENOS           shift and go to state 11
+    PARENTESIS_IZQ  shift and go to state 10
+    NUMERO          shift and go to state 12
+    CADENA          shift and go to state 13
+
+  ! IDENTIFICADOR   [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! IF              [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! WHILE           [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! FOR             [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! DEF             [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! MENOS           [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! PARENTESIS_IZQ  [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! NUMERO          [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+  ! CADENA          [ reduce using rule 10 (statement -> DEF IDENTIFICADOR PARENTESIS_IZQ params PARENTESIS_DER DOS_PUNTOS statements .) ]
+
+    statement                      shift and go to state 14
+    expression                     shift and go to state 5
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 4 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 5 resolved as shift
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 31 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 37 resolved as shift
+WARNING: shift/reduce conflict for ELSE in state 60 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 60 resolved as shift
+WARNING: shift/reduce conflict for IF in state 60 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 60 resolved as shift
+WARNING: shift/reduce conflict for FOR in state 60 resolved as shift
+WARNING: shift/reduce conflict for DEF in state 60 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 60 resolved as shift
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 60 resolved as shift
+WARNING: shift/reduce conflict for NUMERO in state 60 resolved as shift
+WARNING: shift/reduce conflict for CADENA in state 60 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 61 resolved as shift
+WARNING: shift/reduce conflict for IF in state 61 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 61 resolved as shift
+WARNING: shift/reduce conflict for FOR in state 61 resolved as shift
+WARNING: shift/reduce conflict for DEF in state 61 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 61 resolved as shift
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 61 resolved as shift
+WARNING: shift/reduce conflict for NUMERO in state 61 resolved as shift
+WARNING: shift/reduce conflict for CADENA in state 61 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 71 resolved as shift
+WARNING: shift/reduce conflict for IF in state 71 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 71 resolved as shift
+WARNING: shift/reduce conflict for FOR in state 71 resolved as shift
+WARNING: shift/reduce conflict for DEF in state 71 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 71 resolved as shift
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 71 resolved as shift
+WARNING: shift/reduce conflict for NUMERO in state 71 resolved as shift
+WARNING: shift/reduce conflict for CADENA in state 71 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 74 resolved as shift
+WARNING: shift/reduce conflict for IF in state 74 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 74 resolved as shift
+WARNING: shift/reduce conflict for FOR in state 74 resolved as shift
+WARNING: shift/reduce conflict for DEF in state 74 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 74 resolved as shift
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 74 resolved as shift
+WARNING: shift/reduce conflict for NUMERO in state 74 resolved as shift
+WARNING: shift/reduce conflict for CADENA in state 74 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 75 resolved as shift
+WARNING: shift/reduce conflict for IF in state 75 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 75 resolved as shift
+WARNING: shift/reduce conflict for FOR in state 75 resolved as shift
+WARNING: shift/reduce conflict for DEF in state 75 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 75 resolved as shift
+WARNING: shift/reduce conflict for PARENTESIS_IZQ in state 75 resolved as shift
+WARNING: shift/reduce conflict for NUMERO in state 75 resolved as shift
+WARNING: shift/reduce conflict for CADENA in state 75 resolved as shift

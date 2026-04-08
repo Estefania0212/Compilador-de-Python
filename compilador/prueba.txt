@@ -1,0 +1,92 @@
+
+==========================
+PRUEBA 1: VÁLIDA
+--------------------------
+Código:
+x = 5
+y = 3
+z = x + y
+print(z)
+
+Salida esperada:
+- Léxico: Lista de Tokens
+
+- Sintáctico:
+  ¡Análisis sintáctico exitoso!  -> Imprime el Resultado
+
+- Semántico:
+  ¡Análisis semántico exitoso! No se encontraron errores semánticos.
+
+==========================
+PRUEBA: CONDICIONAL IF-ELSE (VÁLIDA)
+--------------------------
+Código:
+x = 7
+if x > 5:
+    print("Mayor que cinco")
+else:
+    print("Cinco o menor")
+
+Salida esperada:
+- Léxico: Lista de Tokens
+- Sintáctico:
+  ¡Análisis sintáctico exitoso! -> Salida: Mayor que cinco
+- Semántico:
+  ¡Análisis semántico exitoso! No se encontraron errores semánticos.
+
+==========================
+PRUEBA 3: NO VÁLIDA (SINTÁCTICO)
+--------------------------
+Código:
+x = 5
+y = 
+z = x + y
+
+Salida esperada:
+- Léxico:
+  Listado de tokens
+- Sintáctico:
+  Error sintáctico: se esperaba un valor después de '=' en la línea 2.
+- Semántico:
+  No se pudo generar el AST. ¿El código está vacío o tiene errores?
+
+==========================
+PRUEBA 4: NO VÁLIDA (SEMÁNTICO)
+--------------------------
+Código:
+x = "Hola"
+y = 5
+z = x + y
+
+Salida esperada:
+- Léxico:
+  Listado de tokens
+- Sintáctico:
+  ¡Análisis sintáctico exitoso! El código cumple las reglas gramaticales.
+- Semántico:
+  Error semántico: no se puede sumar string y number
+
+==========================
+PRUEBA: CONDICIONAL IF-ELSE (NO VÁLIDA)
+--------------------------
+Código:
+x = 7
+if x > 5
+    print("Mayor que cinco")
+else:
+    print("Cinco o menor")
+
+Salida esperada:
+- Léxico:
+  Listado de Tokens
+- Sintáctico:
+  Error sintáctico: se esperaba ':' después de la condición en la línea 2.
+- Semántico:
+  No se pudo generar el AST. ¿El código está vacío o tiene errores?
+
+
+**Nota:**  
+El error principal es sintáctico: falta el símbolo `:` después de la condición del `if`.  
+Esto impide que el análisis sintáctico y semántico continúen correctamente.
+
+
